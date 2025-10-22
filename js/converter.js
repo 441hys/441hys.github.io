@@ -1,3 +1,4 @@
+// ここからコードを書いてください
 export function setupConverter() {
   const converterForm = document.querySelector(".converter-form");
   const inputValue = document.querySelector(".converter-input");
@@ -24,7 +25,6 @@ export function setupConverter() {
     toUnit.innerHTML += `<option value="${unit.base}">${unit.name}</option>`;
   }
 
-  // 最初のオプションを選択
   if (fromUnit.options.length > 0) {
     fromUnit.selectedIndex = 0;
   }
@@ -32,7 +32,6 @@ export function setupConverter() {
     toUnit.selectedIndex = 1;
   }
 
-  // 変換を実行
   function convert() {
     const value = parseFloat(inputValue.value);
 
@@ -45,7 +44,6 @@ export function setupConverter() {
     const toBase = toUnit.value;
     const converted = (value * fromBase) / toBase;
 
-    // 結果を3桁まで丸める
     result.textContent = `${value} ${
       lengthUnit[fromUnit.selectedIndex].name
     } = ${converted.toFixed(3)} ${lengthUnit[toUnit.selectedIndex].name}`;
@@ -53,6 +51,5 @@ export function setupConverter() {
 
   converterForm.addEventListener("input", convert);
 
-  // 初期化
-  convert(); // 初期値で変換を実行
+  convert();
 }
