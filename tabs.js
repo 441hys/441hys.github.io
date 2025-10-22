@@ -4,7 +4,7 @@ export function setupTabs() {
   const converterTab = document.querySelector('[data-tab="converter"]');
   const homeSection = document.getElementById("home");
   const converterSection = document.getElementById("converter");
-
+  
   homeLink.addEventListener("click", () => {
     converterSection.classList.add("hidden");
     homeSection.classList.remove("hidden");
